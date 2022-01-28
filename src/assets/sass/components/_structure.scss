@@ -1,0 +1,13 @@
+$block-spacing-y: 2.5rem;
+
+.block {
+	&-spacer-y,
+	&-spacer-t {
+		padding-top: $block-spacing-y;
+	}
+
+	&-spacer-y,
+	&-spacer-b {
+		padding-bottom: $block-spacing-y;
+	}
+}

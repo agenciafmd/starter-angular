@@ -1,0 +1,21 @@
+// theme colors
+$green: #00441F; // Primary
+$teal: #E0E5CF; // Secondary
+$red: #DD4E4E; // Danger
+$orange: #FF7A40; // Warning
+$spring-wood: #F7F8F3; // Light
+$caribbean-green: #00CF7B; // Success
+$killarney: #3A6D51; // Pills active
+$cyan: #0079A3; // Info
+$gray-900: #001108;
+$white: #FFFFFF;
+
+// bootstrap theme color variables
+$primary: $green !default;
+$secondary: $teal !default;
+$success: $caribbean-green !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$danger: $red !default;
+$light: $spring-wood !default;
+$dark: $gray-900 !default;
