@@ -1,0 +1,9 @@
+{
+  "name": "agenciafmd/starter-angular",
+  "description": "Agência F&MD",
+  "keywords": [
+    "framework"
+  ],
+  "license": "MIT",
+  "type": "project"
+}
