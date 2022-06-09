@@ -1,1 +1,51 @@
-<p>header works!</p>
+<header class="header">
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <a routerLink="/"
+         class="navbar-brand">
+        <img src="assets/svg/fmd-logo.svg"
+             class="img-fluid"
+             alt="Logo F&MD"
+             title="F&MD"
+             loading="lazy"
+             width="88"
+             height="26">
+      </a>
+      <div class="offcanvas offcanvas-end align-items-md-end"
+           tabindex="-1"
+           id="offcanvasNavbar"
+           aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-body">
+          <div class="offcanvas-header justify-content-end">
+            <button class="btn-close"
+                    type="button"
+                    title="Menu"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Fechar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <ul class="navbar-nav">
+            <ng-container *ngFor="let headerLink of headerLinks">
+              <li class="nav-item">
+                <a [routerLink]="headerLink.url"
+                   class="nav-link">
+                  {{ headerLink.description }}
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <button class="navbar-toggler"
+              type="button"
+              title="Menu"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
