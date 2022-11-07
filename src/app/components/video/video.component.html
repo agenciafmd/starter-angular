@@ -1,0 +1,9 @@
+<video width="100%"
+       height="100%"
+       controls
+       autoplay
+       class="video-film"
+       [poster]="videoPath + 'posters/' + posterName">
+  <source [src]="videoPath + fileName" type="video/mp4">
+  <source [src]="videoPath + fileName" type="video/ogg">
+</video>
