@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:ssr-hml": "ng build --base-href=/ --configuration=hml && ng run atarter-angular:server",
+    "build:ssr-prd": "ng build --base-href=/ --configuration=prd && ng run atarter-angular:server"
   },
   "private": true,
   "dependencies": {
