@@ -1,0 +1,13 @@
+Input properties:
+<ul>
+  <ng-container *ngFor="let inputProperty of inputProperties">
+    <li>
+      <code>
+        {{ inputProperty.name }}:
+        <span class="text-warning d-inline-block">
+          {{ inputProperty.type }}
+        </span>
+      </code>
+    </li>
+  </ng-container>
+</ul>
