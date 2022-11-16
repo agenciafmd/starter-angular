@@ -1,0 +1,31 @@
+<picture class="d-inline-block">
+  <source media="(min-width: 1600px)"
+          type="image/webp"
+          srcset="assets/{{ pathBasedOnType }}/{{ name }}-xl.webp,
+          assets/{{ pathBasedOnType }}/{{ name }}-xl@2x.webp 2x">
+  <source media="(min-width: 1600px)"
+          type="image/{{ type }}"
+          srcset="assets/{{ pathBasedOnType }}/{{ name }}-xl.{{ type }},
+           assets/{{ pathBasedOnType }}/{{ name }}-xl@2x.{{ type }} 2x">
+  <source media="(min-width: 1200px)"
+          type="image/webp"
+          srcset="assets/{{ pathBasedOnType }}/{{ name}}-lg.webp,
+          assets/{{ pathBasedOnType }}/{{ name}}-lg@2x.webp 2x">
+  <source media="(min-width: 1200px)"
+          type="image/{{ type }}"
+          srcset="assets/{{ pathBasedOnType }}/{{ name}}-lg.{{ type }},
+          assets/{{ pathBasedOnType }}/{{ name}}-lg@2x.{{ type }} 2x">
+  <source type="image/webp"
+          srcset="assets/{{ pathBasedOnType }}/{{ name }}.webp,
+          assets/{{ pathBasedOnType }}/{{ name }}@2x.webp 2x">
+  <source type="image/{{ type }}"
+          srcset="assets/{{ pathBasedOnType }}/{{ name }}.{{ type }},
+          assets/{{ pathBasedOnType }}/{{ name }}@2x.{{ type }} 2x">
+  <app-image [name]="name"
+             [alt]="alt"
+             [title]="title"
+             [type]="type"
+             [width]="width"
+             [height]="height"
+             [classes]="classes"></app-image>
+</picture>

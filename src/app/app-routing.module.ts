@@ -8,6 +8,13 @@ const routes: Routes = [
         .then(module => module.HomeModule),
     pathMatch: 'full',
     title: 'F&MD - Homepage'
+  },
+  {
+    path: 'theme',
+    loadChildren: () => import('./pages/theme/theme.module')
+        .then(module => module.ThemeModule),
+    pathMatch: 'full',
+    title: 'F&MD - Tema'
   }
 ];
 
