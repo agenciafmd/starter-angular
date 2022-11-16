@@ -7,11 +7,14 @@ import { ImageModule } from '../image/image.module';
 
 @NgModule({
   declarations: [
-    PictureComponent
+    PictureComponent,
   ],
   imports: [
     CommonModule,
     ImageModule,
+  ],
+  exports: [
+    PictureComponent,
   ],
 })
 export class PictureModule { }
