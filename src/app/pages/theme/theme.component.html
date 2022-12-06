@@ -1,0 +1,37 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <app-navigation></app-navigation>
+      </div>
+      <div class="col-lg-9 mx-auto">
+        <div class="row">
+          <div class="col">
+            <app-component-session [id]="components.image.id"
+                                   [title]="components.image.title"
+                                   [description]="components.image.description">
+              <app-component-information [inputProperties]="components.image.inputProperties"></app-component-information>
+              <div class="row justify-content-center">
+                <div class="col-6">
+                  <app-image></app-image>
+                </div>
+              </div>
+            </app-component-session>
+          </div>
+          <div class="col mx-auto">
+            <app-component-session [id]="components.picture.id"
+                                   [title]="components.picture.title"
+                                   [description]="components.picture.description">
+              <app-component-information [inputProperties]="components.picture.inputProperties"></app-component-information>
+              <div class="row justify-content-center">
+                <div class="col-6">
+                  <app-picture></app-picture>
+                </div>
+              </div>
+            </app-component-session>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

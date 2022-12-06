@@ -2,12 +2,4 @@
   &-content {
     text-align: center;
   }
-
-  &-title {
-    @extend .pseudo-balls;
-    @extend .pseudo-balls-center;
-
-    position: relative;
-    line-height: 120%;
-  }
 }

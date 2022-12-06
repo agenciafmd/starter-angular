@@ -1,0 +1,16 @@
+<section [id]="id"
+         class="block-spacer-y">
+  <h2>
+    {{ title }}
+    <a [routerLink]="['/theme']"
+       [fragment]="id"
+       class="link fs-5"
+       title="{{ title }} - link">
+      🔗
+    </a>
+  </h2>
+  <p>
+    {{ description }}
+  </p>
+  <ng-content></ng-content>
+</section>
