@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "generate:svg-sprite": "svg2sprite ./src/assets/svg/sprite ./src/assets/svg/sprite.svg",
     "build:ssr-hml": "ng build --base-href=/ --configuration=hml && ng run atarter-angular:server && node postbuild.js",
     "build:ssr-prd": "ng build --base-href=/ --configuration=prd && ng run atarter-angular:server && node postbuild.js",
     "postbuild": "node postbuild.js"
@@ -24,6 +25,7 @@
     "@angular/service-worker": "^14.2.5",
     "bootstrap": "^5.1.3",
     "rxjs": "~7.4.0",
+    "svg2sprite-cli": " ^2.0.1 ",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
