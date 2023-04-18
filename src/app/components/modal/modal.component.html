@@ -1,0 +1,41 @@
+<div class="modal fade"
+     [id]="modalIdentifier"
+     tabindex="-1"
+     [attr.aria-labelledby]="modalIdentifier"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <ng-container *ngIf="showModalTitle">
+          <h1 class="modal-title"
+              [id]="modalIdentifier">
+            {{ modalTitle }}
+          </h1>
+        </ng-container>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+      </div>
+      <div class="modal-body {{ modalBodyClass }}">
+        <ng-content>
+
+        </ng-content>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW TO USE
+<button type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+  Launch demo modal 2
+</button>
+
+<app-modal [modalIdentifier]="'exampleModal'">
+  <h3>
+    Teste
+  </h3>
+</app-modal>-->

@@ -9,8 +9,10 @@
     "test": "ng test",
     "dev:ssr": "ng run starter-angular:serve-ssr",
     "serve:ssr": "node dist/starter-angular/server/main.js",
-    "build:ssr": "ng build && ng run starter-angular:server",
+    "build:ssr-hml": "ng build --base-href=/ --configuration=hml && ng run starter-angular:server",
+    "build:ssr-prd": "ng build --base-href=/ --configuration=prd && ng run starter-angular:server",
     "prerender": "ng run starter-angular:prerender"
+
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@angular/platform-server": "^14.2.5",
     "@angular/router": "^14.2.5",
     "@nguniversal/express-engine": "^14.2.2",
+    "@angular/service-worker": "^14.2.5",
     "bootstrap": "^5.1.3",
     "express": "^4.15.2",
     "rxjs": "~7.4.0",

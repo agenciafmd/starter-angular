@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HeaderModule} from "./components/header/header.module";
 import {FooterModule} from "./components/footer/footer.module";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,13 @@ import {FooterModule} from "./components/footer/footer.module";
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
