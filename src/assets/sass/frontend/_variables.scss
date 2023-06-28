@@ -40,12 +40,15 @@ $blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
+$red: #DD4E4E !default; // Danger
+$orange: #FF7A40 !default; // Warning
 $yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
+$green: #00441F !default; // Primary
+$killarney: #3A6D51 !default; // Pills active
+$caribbean-green: #00CF7B !default; // Success
+$teal: #E0E5CF !default;
+$spring-wood: #F7F8F3 !default; // Light
+$cyan: #0079A3 !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -67,12 +70,40 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
+// scss-docs-start theme-color-variables
+$primary: $green !default;
+$secondary: $teal !default;
+$success: $caribbean-green !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$danger: $red !default;
+$light: $spring-wood !default;
+$dark: $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+) !default;
+// scss-docs-end theme-colors-map
+
+// scss-docs-start theme-colors-rgb
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
+// scss-docs-end theme-colors-rgb
+
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio:   4.5 !default;
 
 // Customize the light and dark text colors for use in our color contrast function.
-$color-contrast-dark:      $black !default;
+$color-contrast-dark: $primary !default;
 $color-contrast-light:     $white !default;
 
 // fusv-disable
@@ -297,30 +328,6 @@ $cyans: (
 ) !default;
 // fusv-enable
 
-// scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
-// scss-docs-end theme-color-variables
-
-// scss-docs-start theme-colors-map
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-) !default;
-// scss-docs-end theme-colors-map
-
 // Characters which are escaped by the escape-svg function
 $escaped-characters: (
     ("<", "%3c"),
@@ -347,7 +354,7 @@ $enable-cssgrid:              false !default;
 $enable-button-pointers:      true !default;
 $enable-rfs:                  true !default;
 $enable-validation-icons:     true !default;
-$enable-negative-margins:     false !default;
+$enable-negative-margins: true !default;
 $enable-deprecation-messages: true !default;
 $enable-important-utilities:  true !default;
 $enable-floating-label-over-the-line: true !default;
@@ -373,14 +380,22 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 
 // scss-docs-start spacer-variables-maps
 $spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-) !default;
+$spacers: () !default;
+
+@for $i from 0 through 20 {
+  $unit: $spacer * $i;
+
+  $unit-variations: (
+    #{$i}: $unit,
+    '#{$i}q': $unit + .25,
+    '#{$i}h': $unit + .5,
+    '#{$i}hq': $unit + .75,
+  );
+
+  $spacers: map-merge($spacers, $unit-variations);
+}
+
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
 // scss-docs-end spacer-variables-maps
 
 // Position
@@ -390,7 +405,9 @@ $spacers: (
 // scss-docs-start position-map
 $position-values: (
   0: 0,
+  25: 25%,
   50: 50%,
+  75: 75%,
   100: 100%
 ) !default;
 // scss-docs-end position-map
@@ -402,7 +419,7 @@ $sizing-values: $position-values;
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color: $primary !default;
 $body-text-align:           null !default;
 
 // Links

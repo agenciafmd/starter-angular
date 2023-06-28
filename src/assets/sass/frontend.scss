@@ -10,6 +10,7 @@
 // 2. Include any default variable overrides here
 @import "frontend/colors-variables";
 @import "frontend/variables";
+@import "frontend/variables-dark";
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "bootstrap/scss/variables";
@@ -64,6 +65,5 @@
 @import "components/modal";
 @import "components/structure";
 @import "components/videos";
-@import "components/typography";
 @import "styles";
 
